@@ -61,7 +61,6 @@
 /.eslintrc.json
 /.gitattributes
 /.ht.router.php
-/README.md
 /autoload.php
 /example.gitignore
 /.editorconfig

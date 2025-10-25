@@ -1,0 +1,91 @@
+# =====================================================
+# File: .github/workflows/deploy.yml
+# =====================================================
+# This workflow builds a Drupal 11 project with Composer,
+# packages it as an artifact,
+# and deploys it to a DigitalOcean droplet.
+# =====================================================
+
+name: Build and Deploy Drupal
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: mbstring, intl, pdo_mysql
+
+      - name: Install Composer dependencies
+        run: composer install --optimize-autoloader
+
+      - name: Create artifact (exclude files, settings.local.php)
+        run: tar -czf drupal-build.tar.gz --exclude=.git --exclude=web/sites/default/files --exclude=web/sites/default/settings.local.php . || true
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: drupal-build
+          path: drupal-build.tar.gz
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: drupal-build
+          path: .
+
+      - name: Copy artifact to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.DO_HOST }}
+          username: ${{ secrets.DO_USER }}
+          key: ${{ secrets.DO_SSH_KEY }}
+          source: "drupal-build.tar.gz"
+          target: "/var/www/releases/${{ secrets.DO_DEPLOY_DIR }}"
+
+      - name: Deploy on server
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.DO_HOST }}
+          username: ${{ secrets.DO_USER }}
+          key: ${{ secrets.DO_SSH_KEY }}
+          script: |
+            # Create a timestamped release directory
+            RELEASE_DIR=/var/www/releases/${{ secrets.DO_DEPLOY_DIR }}/$(date +%Y%m%d%H%M%S)
+            mkdir -p $RELEASE_DIR
+
+            # Extract artifact
+            tar -xzf /var/www/releases/${{ secrets.DO_DEPLOY_DIR }}/drupal-build.tar.gz -C $RELEASE_DIR --strip-components=1
+
+            # Preserve existing files directory by symlinking it
+            rm -rf $RELEASE_DIR/web/sites/default/files
+            ln -sfn /var/www/shared/${{ secrets.DO_DEPLOY_DIR }}/files $RELEASE_DIR/web/sites/default/files
+
+            # Preserve settings.local.php if it exists
+            if [ -f /var/www/shared/${{ secrets.DO_DEPLOY_DIR }}/settings.local.php ]; then
+              rm -f $RELEASE_DIR/web/sites/default/settings.local.php
+              ln -sfn /var/www/shared/${{ secrets.DO_DEPLOY_DIR }}/settings.local.php $RELEASE_DIR/web/sites/default/settings.local.php
+            fi
+
+            # Update symlink to current release
+            rm -rf /var/www/html/${{ secrets.DO_DEPLOY_DIR }}
+            ln -sfn $RELEASE_DIR /var/www/html/${{ secrets.DO_DEPLOY_DIR }}
+
+            # Run Drupal updates
+            cd /var/www/html/${{ secrets.DO_DEPLOY_DIR }}
+            vendor/bin/drush deploy -y || true

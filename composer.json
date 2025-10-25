@@ -23,6 +23,9 @@
         "drupal/core-recommended": "^11.2",
         "drupal/highlight_php": "^1.0",
         "drupal/next": "^2.0",
+        "drupal/seckit": "^2.0",
+        "drupal/security_review": "^3.1",
+        "drupal/shield": "^1.8",
         "drush/drush": "^13.6"
     },
     "conflict": {

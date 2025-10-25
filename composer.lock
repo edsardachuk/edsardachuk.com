@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5f88640564350ad88c0491659d399437",
+    "content-hash": "a0f0f578d111ac5733a0cc849a4d0ab7",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2006,6 +2006,209 @@
                 "source": "https://cgit.drupalcode.org/pathauto",
                 "issues": "https://www.drupal.org/project/issues/pathauto",
                 "documentation": "https://www.drupal.org/docs/8/modules/pathauto"
+            }
+        },
+        {
+            "name": "drupal/seckit",
+            "version": "2.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/seckit.git",
+                "reference": "2.0.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/seckit-2.0.3.zip",
+                "reference": "2.0.3",
+                "shasum": "34d38f2daaf99781ef6b7e7fbe2eeabc73a7ca16"
+            },
+            "require": {
+                "drupal/core": "^9.5 || ^10 || ^11"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.3",
+                    "datestamp": "1726075930",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "badjava",
+                    "homepage": "https://www.drupal.org/user/83372"
+                },
+                {
+                    "name": "jweowu",
+                    "homepage": "https://www.drupal.org/user/152788"
+                },
+                {
+                    "name": "mcdruid",
+                    "homepage": "https://www.drupal.org/user/255969"
+                },
+                {
+                    "name": "p0deje",
+                    "homepage": "https://www.drupal.org/user/529960"
+                }
+            ],
+            "description": "SecKit provides Drupal with various security-hardening options.",
+            "homepage": "https://www.drupal.org/project/seckit",
+            "keywords": [
+                "Drupal",
+                "security"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/seckit",
+                "issues": "http://drupal.org/project/issues/seckit"
+            }
+        },
+        {
+            "name": "drupal/security_review",
+            "version": "3.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/security_review.git",
+                "reference": "3.1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/security_review-3.1.1.zip",
+                "reference": "3.1.1",
+                "shasum": "00144490e80dd6811bc40944b1796daa81d69f67"
+            },
+            "require": {
+                "drupal/core": "^10.3 || ^11",
+                "php": ">=8.1.0",
+                "symfony/filesystem": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "3.1.1",
+                    "datestamp": "1731950074",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Greg Knaddison (greggles)",
+                    "homepage": "https://www.drupal.org/u/greggles",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Ben Jeavons (coltrane)",
+                    "homepage": "https://www.drupal.org/u/coltrane",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "David Snopek (dsnopek)",
+                    "homepage": "https://www.drupal.org/u/dsnopek",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Viktor Bán (banviktor)",
+                    "homepage": "https://www.drupal.org/u/banviktor",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Stephen Mustgrave (smustgrave)",
+                    "homepage": "https://www.drupal.org/u/smustgrave",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "The Security Review module automates testing for many of the easy-to-make mistakes that render your site insecure..",
+            "homepage": "https://www.drupal.org/project/security_review",
+            "support": {
+                "source": "https://git.drupalcode.org/project/security_review",
+                "issues": "https://www.drupal.org/project/issues/security_review"
+            }
+        },
+        {
+            "name": "drupal/shield",
+            "version": "1.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/shield.git",
+                "reference": "8.x-1.8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/shield-8.x-1.8.zip",
+                "reference": "8.x-1.8",
+                "shasum": "709b5580790a3b5bd8dda26f722cdb5a9c3911c5"
+            },
+            "require": {
+                "drupal/core": "^9.2 || ^10 || ^11"
+            },
+            "require-dev": {
+                "drupal/key": "^1.16"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.8",
+                    "datestamp": "1719947682",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "branch-alias": {
+                    "dev-8.x-1.x": "1.x-dev"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "badjava",
+                    "homepage": "https://www.drupal.org/user/83372"
+                },
+                {
+                    "name": "chx",
+                    "homepage": "https://www.drupal.org/user/9446"
+                },
+                {
+                    "name": "geek-merlin",
+                    "homepage": "https://www.drupal.org/user/229048"
+                },
+                {
+                    "name": "japerry",
+                    "homepage": "https://www.drupal.org/user/45640"
+                },
+                {
+                    "name": "kalman.hosszu",
+                    "homepage": "https://www.drupal.org/user/267481"
+                },
+                {
+                    "name": "pkiraly",
+                    "homepage": "https://www.drupal.org/user/352587"
+                },
+                {
+                    "name": "vbouchet",
+                    "homepage": "https://www.drupal.org/user/1671428"
+                }
+            ],
+            "description": "Creates a general shield for the site.",
+            "homepage": "https://www.drupal.org/project/shield",
+            "support": {
+                "source": "https://git.drupalcode.org/project/shield"
             }
         },
         {

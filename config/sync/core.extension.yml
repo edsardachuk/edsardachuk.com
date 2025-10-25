@@ -40,7 +40,10 @@ module:
   path: 0
   path_alias: 0
   search: 0
+  seckit: 0
+  security_review: 0
   serialization: 0
+  shield: 0
   shortcut: 0
   simple_oauth: 0
   subrequests: 0

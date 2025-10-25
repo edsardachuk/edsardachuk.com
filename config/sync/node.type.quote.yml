@@ -1,0 +1,17 @@
+uuid: 818bb3bc-f1fb-45bc-a176-578f2e27b3fb
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Quote
+type: quote
+description: null
+help: null
+new_revision: true
+preview_mode: 0
+display_submitted: false

@@ -1,0 +1,50 @@
+uuid: 78c7e5ff-e909-4a7b-b209-7742a7875738
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.note.body
+    - field.field.node.note.field_image
+    - field.field.node.note.field_summary
+    - image.style.wide
+    - node.type.note
+  module:
+    - image
+    - text
+    - user
+id: node.note.default
+targetEntityType: node
+bundle: note
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: wide
+      image_loading:
+        attribute: eager
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_summary:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+hidden: {  }

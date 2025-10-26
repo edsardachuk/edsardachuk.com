@@ -1,6 +1,6 @@
 _core:
   default_config_hash: FLJZME3II5fjmMSrdEvJHp95ZJf8V_X0jbX0VdVU1BU
-shield_enable: true
+shield_enable: false
 credential_provider: shield
 credentials:
   shield:
@@ -11,7 +11,7 @@ debug_header: false
 unset_basic_auth_headers: true
 print: Hello!
 method: 0
-paths: ''
-allowlist: ''
+paths: '/jsonapi/*'
+allowlist: "75.2.60.5\r\n3.141.5.151\r\n18.227.107.124"
 http_method_allowlist: {  }
-domains: ''
+domains: "edsardachuk.netlify.app\r\nedsardachuk.com\r\nwww.edsardachuk.com\r\nlocalhost:3000"

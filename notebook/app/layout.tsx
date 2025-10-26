@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   },
   description: "Drupal Notes by Ed Sardachuk",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon.svg",
   },
 }
 

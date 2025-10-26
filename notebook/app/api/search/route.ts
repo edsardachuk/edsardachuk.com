@@ -11,7 +11,7 @@ export async function GET(request: Request) {
     "filter[status]": "1",
     // "page[limit]": limit.toString(),
     // "page[offset]": (page * limit).toString(),
-    "fields[node--note]": "title,path,field_image,field_summary,uid,created",
+    "fields[node--note]": "title,path,field_image,field_summary,body,uid,created",
     include: "field_image,uid",
     sort: "-created",
   }
@@ -26,11 +26,17 @@ export async function GET(request: Request) {
       "filter[title][condition][value]": q,
       "filter[title][condition][memberOf]": "combine",
 
-      // Body contains query.
-      "filter[text][condition][path]": "field_summary",
+      // Summary contains query.
+      "filter[text][condition][path]": "field_summary.value",
       "filter[text][condition][operator]": "CONTAINS",
       "filter[text][condition][value]": q,
       "filter[text][condition][memberOf]": "combine",
+
+      // Body contains query.
+      "filter[body][condition][path]": "body.value",
+      "filter[body][condition][operator]": "CONTAINS",
+      "filter[body][condition][value]": q,
+      "filter[body][condition][memberOf]": "combine",
     })
   }
 

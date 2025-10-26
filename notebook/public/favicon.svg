@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="24" viewBox="0 0 20 24" aria-labelledby="title" role="img">
+  <title id="title">Drupal Notes</title>
+  <defs>
+    <linearGradient id="dnPage" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#E9F3FF"/>
+      <stop offset="1" stop-color="#D7E9FF"/>
+    </linearGradient>
+  </defs>
+  <rect x="3" y="2.5" width="14" height="19" rx="2.5" fill="url(#dnPage)" stroke="#0369A1" stroke-width="1.25"/>
+  <path d="M17 6.5v-4a.5.5 0 0 0-.5-.0h-4L17 6.5Z" fill="#BFE0FF" stroke="#0369A1" stroke-width="1.25" stroke-linejoin="round"/>
+  <path d="M5.75 8.5H15M5.75 11H15M5.75 13.5H12.5" stroke="#0369A1" stroke-width="1.25" stroke-linecap="round"/>
+</svg>

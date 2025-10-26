@@ -1,0 +1,10 @@
+parameters:
+  cors.config:
+    enabled: true
+    allowedHeaders: ['*']
+    allowedMethods: ['*']
+    allowedOrigins: ['https://edsardachuk.com', 'https://edsardachuk.netlify.app']
+    exposedHeaders: false
+    maxAge: false
+    supportsCredentials: false
+

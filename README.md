@@ -4,7 +4,8 @@ This is a modern **Drupal 11** project built by Ed Sardachuk. **DDEV** is used f
 It’s a **headless Drupal site** with a **React front end** powered by the **Next.js** framework.
 The Next.js source code is located in the `notebook` folder.
 
-Although this is a demonstrative project, it was launched as a live production site hosted on **Digital Ocean** (for backend) and **Netlify**.
+Although this is a demonstrative project, it was launched as a live production site hosted on **Digital Ocean** (for backend) and **Netlify**. CI/CD with GitHub Actions is set up to automate deployments.
+
 https://edsardachuk.com/
 
 **Next.js** is used to generate static pages based on content managed in Drupal, ensuring performance and scalability.
